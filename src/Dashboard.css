@@ -1,0 +1,144 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #f7fafc;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px #d0d0d03b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.dashboard-header button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.dashboard-header button:hover {
+  background: #1e40af;
+}
+
+/* Profile section */
+.profile-section {
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0px 0px 6px 1px #e0e0e0;
+}
+
+.profile-section h3 {
+  margin-bottom: 15px;
+  color: #334155;
+}
+
+.profile-section p {
+  margin: 6px 0;
+  font-weight: 500;
+}
+
+.profile-section form input {
+  width: 100%;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  outline-color: #2563eb;
+  font-family: inherit;
+}
+
+.profile-section form button {
+  background: #2563eb;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.profile-section form button:hover {
+  background: #1e40af;
+}
+
+.profile-message {
+  margin-top: 10px;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Booked slots */
+.slots-section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 7px #dedede;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+}
+
+.slots-section h3 {
+  margin-bottom: 15px;
+  color: #334155;
+}
+
+.slot-item {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 8px 0;
+  font-weight: 500;
+  color: #475569;
+}
+
+.slot-item:last-child {
+  border-bottom: none;
+}
+
+.slot-item span {
+  font-style: italic;
+  color: #64748b;
+  margin-left: 10px;
+}
+
+/* Tutors section */
+.tutors-section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 7px #dedede;
+  padding: 20px 25px;
+}
+
+.tutors-section h3 {
+  margin-bottom: 15px;
+  color: #334155;
+}
+
+.tutor-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 500;
+  color: #475569;
+}
+
+.tutor-item:last-child {
+  border-bottom: none;
+}
