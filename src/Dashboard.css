@@ -1,144 +1,147 @@
+/* General Container */
 .dashboard-container {
-  max-width: 900px;
-  margin: 30px auto;
-  background: #f7fafc;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 15px #d0d0d03b;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;      /* Prevent overflow */
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+  color: #000;
+  box-sizing: border-box;
 }
 
+/* Header */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  background: #1e3a8a;   /* dark blue */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .dashboard-header h2 {
   margin: 0;
-  color: #1e293b;
-  font-weight: 700;
+  font-size: 1.8rem;
 }
 
 .dashboard-header button {
-  background: #2563eb;
-  color: white;
+  background: white;
+  color: #1e3a8a;
   border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
+  transition: 0.3s;
 }
 
 .dashboard-header button:hover {
-  background: #1e40af;
-}
-
-/* Profile section */
-.profile-section {
-  background: #ffffff;
-  padding: 20px 25px;
-  border-radius: 8px;
-  margin-bottom: 25px;
-  box-shadow: 0px 0px 6px 1px #e0e0e0;
-}
-
-.profile-section h3 {
-  margin-bottom: 15px;
-  color: #334155;
-}
-
-.profile-section p {
-  margin: 6px 0;
-  font-weight: 500;
-}
-
-.profile-section form input {
-  width: 100%;
-  padding: 9px 12px;
-  margin-bottom: 10px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 15px;
-  outline-color: #2563eb;
-  font-family: inherit;
-}
-
-.profile-section form button {
-  background: #2563eb;
-  border: none;
+  background: #2563eb;   /* lighter blue on hover */
   color: white;
+}
+
+/* Profile Section */
+.profile-section, .slot-add-section, .slots-section, .history-section {
+  background: white;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.profile-section h3, .slot-add-section h3, .slots-section h3, .history-section h3 {
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+/* Forms */
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+form button {
+  background: #1e3a8a;
+  color: white;
+  border: none;
   padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 15px;
   margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.profile-section form button:hover {
-  background: #1e40af;
+form button:hover {
+  background: #2563eb;
 }
 
-.profile-message {
+/* Messages */
+.profile-message, .slot-message {
   margin-top: 10px;
-  color: #2563eb;
-  font-weight: 600;
+  font-weight: bold;
+  color: green;
 }
 
-/* Booked slots */
-.slots-section {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 7px #dedede;
-  padding: 20px 25px;
-  margin-bottom: 25px;
-}
-
-.slots-section h3 {
-  margin-bottom: 15px;
-  color: #334155;
-}
-
+/* Slots List */
 .slot-item {
-  border-bottom: 1px solid #e2e8f0;
-  padding: 8px 0;
-  font-weight: 500;
-  color: #475569;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: #f5f5f5;
+  transition: 0.2s;
 }
 
-.slot-item:last-child {
-  border-bottom: none;
+.slot-item:hover {
+  background: #e0e7ff;  /* light blue hover */
 }
 
-.slot-item span {
-  font-style: italic;
-  color: #64748b;
+.slot-item b {
+  color: #1e3a8a;
+}
+
+/* History */
+.history-section .slot-item {
+  opacity: 0.7;
+}
+
+/* Buttons inside slots */
+.slot-item a {
+  text-decoration: none;
+  color: #1e3a8a;
+  font-weight: bold;
   margin-left: 10px;
+  transition: 0.3s;
 }
 
-/* Tutors section */
-.tutors-section {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 7px #dedede;
-  padding: 20px 25px;
+.slot-item a:hover {
+  color: #2563eb;
 }
 
-.tutors-section h3 {
-  margin-bottom: 15px;
-  color: #334155;
-}
-
-.tutor-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #e2e8f0;
-  font-weight: 500;
-  color: #475569;
-}
-
-.tutor-item:last-child {
-  border-bottom: none;
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+  .dashboard-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .dashboard-header button {
+    width: 100%;
+  }
 }
