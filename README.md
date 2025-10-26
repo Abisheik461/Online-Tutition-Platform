@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Online Tuition Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+The Online Tuition Platform is a modern web application designed to connect students with qualified tutors for live one-on-one sessions. The platform allows tutors to manage their availability, while students can view available time slots and book sessions easily. Once a session is booked, both the tutor and student receive a link to join the live class, enabling seamless online learning.  
 
-## Available Scripts
+This platform aims to provide an intuitive, user-friendly, and efficient online learning experience for both tutors and students.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tutor Features
+- **Manage Availability:** Tutors can add, edit, and delete their available time slots.  
+- **View Bookings:** See all upcoming and past booked sessions.  
+- **Video Integration:** Each booked session automatically generates a video link for online classes.  
+- **Responsive Dashboard:** Easily access and manage schedules across devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Student Features
+- **View Available Slots:** Students can browse all tutor time slots in real-time.  
+- **Book Sessions:** Book a slot instantly, with automated confirmation notifications.  
+- **Access Video Link:** Once booking is confirmed, students receive the session link.  
+- **Dynamic Slot Display:** Upcoming slots update dynamically as tutors change their availability.
 
-### `npm test`
+### Slot Management
+- Real-time updates ensure that students see accurate availability.  
+- Automatically disables slots that are already booked to avoid double bookings.  
+- Upcoming slot display issue is known and will be resolved in the next update.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Additional Features
+- **User-friendly UI:** Built with React, HTML, CSS, and JavaScript for a smooth experience.  
+- **Scalable Architecture:** Backend and database design can handle multiple tutors and students efficiently.  
+- **Secure Data Handling:** User data, bookings, and session links are stored securely in MySQL.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Layer               | Technology |
+|--------------------|------------|
+| Frontend           | React, HTML, CSS, JavaScript |
+| Backend            | Node.js / Express (if used) |
+| Database           | MySQL |
+| Video Integration  | Embedded video links for live sessions |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
