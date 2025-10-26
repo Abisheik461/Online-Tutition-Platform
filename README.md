@@ -38,9 +38,9 @@ This platform aims to provide an intuitive, user-friendly, and efficient online 
 | Layer               | Technology |
 |--------------------|------------|
 | Frontend           | React, HTML, CSS, JavaScript |
-| Backend            | Node.js / Express (if used) |
+| Backend            | Node.js / Express  |
 | Database           | MySQL |
-| Video Integration  | Embedded video links for live sessions |
+| Video Integration  | Jitsi |
 
 ---
 
