@@ -8,7 +8,7 @@ function Login({ setUser }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch('http://localhost:4000/api/login', {
+    fetch(`${process.env.REACT_APP_API_URL}/api/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })

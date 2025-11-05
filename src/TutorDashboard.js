@@ -27,14 +27,14 @@ function TutorDashboard({ user, setUser }) {
 
   // Fetch slots on user change
   useEffect(() => {
-    fetch(`http://localhost:4000/api/tutor-slots?tutorId=${user.id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/tutor-slots?tutorId=${user.id}`)
       .then(res => res.json())
       .then(setSlots);
   }, [user]);
 
   // Fetch history function
   const fetchHistory = () => {
-    fetch(`http://localhost:4000/api/tutor-history?tutorId=${user.id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/tutor-history?tutorId=${user.id}`)
       .then(res => res.json())
       .then(setHistory);
     setShowHistory(true);
@@ -43,7 +43,7 @@ function TutorDashboard({ user, setUser }) {
   // Profile update
   const handleProfileUpdate = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:4000/api/users/${profile.id}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/users/${profile.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(profile)
@@ -92,7 +92,7 @@ function TutorDashboard({ user, setUser }) {
     const startDatetime = `${slotDate} ${startTime}:00`;
     const endDatetime = `${slotDate} ${endTime}:00`;
 
-    fetch('http://localhost:4000/api/slots', {
+    fetch(`${process.env.REACT_APP_API_URL}/api/slots`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -109,7 +109,7 @@ function TutorDashboard({ user, setUser }) {
           setStartTime('');
           setEndTime('');
           setTopic('');
-          fetch(`http://localhost:4000/api/tutor-slots?tutorId=${user.id}`)
+          fetch(`${process.env.REACT_APP_API_URL}/api/tutor-slots?tutorId=${user.id}`)
             .then(res => res.json())
             .then(setSlots);
         } else {
