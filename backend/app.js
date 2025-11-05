@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
+require('dotenv').config();
 
 
 const app = express();
@@ -9,10 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 const con = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '9883',
-  database: 'tuition_platform'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 con.connect(err => {
