@@ -44,6 +44,9 @@ app.post('/api/users', (req, res) => {
     }
   );
 });
+app.get('/api', (req, res) => {
+  res.send('API is running!');
+});
 
 // Enroll student
 app.post('/api/enroll', (req, res) => {
