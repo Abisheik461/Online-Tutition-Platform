@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 
 function formatAsLocal(dtStr) {
-  // Expects MySQL DATETIME string "YYYY-MM-DD HH:MM:SS"
-  // Converts to "YYYY-MM-DDTHH:MM:SS" for JS Date local parse
   if (!dtStr) return '';
   return new Date(dtStr.replace(' ', 'T')).toLocaleString();
 }
@@ -25,16 +23,19 @@ function TutorDashboard({ user, setUser }) {
   const [history, setHistory] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
+  // 👇 Use environment variable
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+
   // Fetch slots on user change
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/tutor-slots?tutorId=${user.id}`)
+    fetch(`${API_URL}/api/tutor-slots?tutorId=${user.id}`)
       .then(res => res.json())
       .then(setSlots);
   }, [user]);
 
   // Fetch history function
   const fetchHistory = () => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/tutor-history?tutorId=${user.id}`)
+    fetch(`${API_URL}/api/tutor-history?tutorId=${user.id}`)
       .then(res => res.json())
       .then(setHistory);
     setShowHistory(true);
@@ -43,7 +44,7 @@ function TutorDashboard({ user, setUser }) {
   // Profile update
   const handleProfileUpdate = (e) => {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_API_URL}/api/users/${profile.id}`, {
+    fetch(`${API_URL}/api/users/${profile.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(profile)
@@ -92,7 +93,7 @@ function TutorDashboard({ user, setUser }) {
     const startDatetime = `${slotDate} ${startTime}:00`;
     const endDatetime = `${slotDate} ${endTime}:00`;
 
-    fetch(`${process.env.REACT_APP_API_URL}/api/slots`, {
+    fetch(`${API_URL}/api/slots`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -101,7 +102,8 @@ function TutorDashboard({ user, setUser }) {
         endDatetime,
         topic
       })
-    }).then(res => res.json())
+    })
+      .then(res => res.json())
       .then(data => {
         if (data.success) {
           setSlotMsg('Slot added!');
@@ -109,7 +111,7 @@ function TutorDashboard({ user, setUser }) {
           setStartTime('');
           setEndTime('');
           setTopic('');
-          fetch(`${process.env.REACT_APP_API_URL}/api/tutor-slots?tutorId=${user.id}`)
+          fetch(`${API_URL}/api/tutor-slots?tutorId=${user.id}`)
             .then(res => res.json())
             .then(setSlots);
         } else {

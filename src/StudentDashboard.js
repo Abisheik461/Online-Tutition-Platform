@@ -23,9 +23,12 @@ function StudentDashboard({ user, setUser }) {
   const [history, setHistory] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
+  // 👇 Use environment variable
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+
   // Fetch history function
   const fetchHistory = () => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/student-history?studentId=${user.id}`)
+    fetch(`${API_URL}/api/student-history?studentId=${user.id}`)
       .then(res => res.json())
       .then(setHistory);
     setShowHistory(true);
@@ -33,7 +36,7 @@ function StudentDashboard({ user, setUser }) {
 
   // Fetch tutors and booked slots on mount
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/tutors`)
+    fetch(`${API_URL}/api/tutors`)
       .then(res => res.json())
       .then(setTutors);
 
@@ -43,7 +46,7 @@ function StudentDashboard({ user, setUser }) {
 
   // Fetch booked slots function
   const fetchBookedSlots = () => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/student-slots?studentId=${user.id}`)
+    fetch(`${API_URL}/api/student-slots?studentId=${user.id}`)
       .then(res => res.json())
       .then(setBookedSlots);
   };
@@ -51,7 +54,7 @@ function StudentDashboard({ user, setUser }) {
   // Profile update handler
   const handleProfileUpdate = (e) => {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_API_URL}/api/users/${profile.id}`, {
+    fetch(`${API_URL}/api/users/${profile.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: profile.name, username: profile.username })
@@ -68,7 +71,7 @@ function StudentDashboard({ user, setUser }) {
   const showTutorDetails = (tutor) => {
     setSelectedTutor(tutor);
     setDetailLoading(true);
-    fetch(`${process.env.REACT_APP_API_URL}/api/tutor-available-slots?tutorId=${tutor.id}`)
+    fetch(`${API_URL}/api/tutor-available-slots?tutorId=${tutor.id}`)
       .then(res => res.json())
       .then((slots) => {
         setAvailableSlots(slots);
@@ -78,7 +81,7 @@ function StudentDashboard({ user, setUser }) {
 
   // Cancel booking handler
   const cancelBooking = (bookingId) => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/cancel-booking/${bookingId}`, {
+    fetch(`${API_URL}/api/cancel-booking/${bookingId}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
@@ -94,7 +97,7 @@ function StudentDashboard({ user, setUser }) {
   // Booking a slot
   const bookSlot = (slotId) => {
     setSlotMsg('');
-    fetch(`${process.env.REACT_APP_API_URL}/api/book-slot`, {
+    fetch(`${API_URL}/api/book-slot`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ studentId: user.id, slotId })

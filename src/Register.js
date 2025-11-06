@@ -7,10 +7,11 @@ function Register({ setUser }) {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('student');
   const [msg, setMsg] = useState('');
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleRegister = (e) => {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_API_URL}/api/users`, {
+    fetch(`${API_URL}/api/users`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, username, password, role })

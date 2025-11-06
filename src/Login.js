@@ -6,9 +6,11 @@ function Login({ setUser }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_API_URL}/api/login`, {
+    fetch(`${API_URL}/api/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
